@@ -1,0 +1,167 @@
+ @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Hind+Vadodara&display=swap');
+
+/* PAIN  */
+#content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#background {
+    height: 725px;
+    background-color: #427651;
+}
+
+.icon {
+    width: 80px;
+    padding-top: 10px;
+}
+
+.logo {
+    width: 80px;
+}
+
+#logo_link{
+    padding-top: 5px;
+}
+
+main section {
+    text-align: center;
+}
+
+main section img {
+    box-sizing: border-box; 
+} 
+
+nav a {
+    text-align: center;
+    color: #fcfbfb;
+    text-decoration: none;
+    padding: 35px;
+
+}
+
+nav a:hover {
+    background-color: #51B867;
+}
+
+footer h3 a:hover {
+    text-decoration: underline;
+}
+
+h4, h1 {
+    color: #427651;
+    font-family: gugi;
+    text-align: center;
+    font-size: 2em;
+}
+
+h2 {
+    color: #51B867;
+    font-family: gugi;
+    font-size: 2em;
+    margin: 0;
+} 
+
+
+.home-title {
+    color: #51B867;
+    font-family: gugi;
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+body {
+    font-size:  22px;
+    background-color: #121216;
+    font-family: "Hind Vadodara";
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F55A00;
+}
+
+#hero-msg h1,
+#hero-msg h4 {
+    text-align: center;
+}
+
+#hero-img {
+    width: 100%;
+}
+
+footer {
+    background-color: #F55A00;
+    padding: 25px 50px;
+    margin-top: 200px;
+}
+
+footer h3 {
+    color: #fcfbfb;
+    text-decoration: underline;
+}
+
+footer a {
+    color: #fcfbfb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    background-color: #427651;
+    color: #fcfbfb;
+}
+
+footer .social img {
+  padding-top: 15px;
+}
+
+.planet-card, .rocket-card, .star-card{
+    border: 10px, solid #F55A00; 
+    margin: 200px 0px;
+}
+
+.book,
+.submit {
+    background-color: #51B867;
+    color: #fcfbfb;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 15px 30px;
+}
+
+.book:hover,
+.submit:hover {
+    background-color: #fcfbfb;
+    color: #51B867;
+}
+
+.msg {
+    background-color: #F55A00;
+    line-height: 1.5em;
+    padding: 35px;
+}
+
+.msg h2 {
+    font-family: gugi;
+    color: #fcfbfb;
+}
+
+.msg p {
+    font-family: "Hind Vadodara";
+    color: #fcfbfb;
+    font-size: .8em;
+    padding-bottom: 15px;
+}
+
+
+.button-box {
+    text-align: center;
+}
+
+.card-img {
+    border: 10px solid #F55A00;;
+} 

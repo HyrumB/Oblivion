@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&family=Hind+Vadodara&display=swap");
+
+:root {
+  --font1: Hind Vadodara;
+  --font2: Gugi;
+
+  /* vars to hold colours */
+  --text: #ffffff;
+  --background: #121212;
+  --accent1: #f55a00;
+  --accent2: #51b867;
+  --accent3: #427651;
+}
+
+body {
+  font-size: 22px;
+  background-color: var(--background);
+  font-family: var(--font1);
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+body a {
+  text-decoration: none;
+}
+
+/* header */
+
+header .logo {
+  width: 80px;
+}
+
+#logo_link {
+  padding-top: 5px;
+  justify-self: left;
+}
+
+header {
+  /* spacing */
+  background-color: var(--accent1);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  flex-direction: row;
+  flex-basis: 100%;
+
+  /* text  */
+  text-decoration: none;
+  color: var(--text);
+}
+
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+  /* spacing */
+  justify-self: flex-end;
+  align-self: flex-end;
+  padding: 20px;
+}
+
+nav.hide {
+    display: none;
+
+}
+  
+nav a {
+  text-decoration: none;
+  padding-left: 20px;
+  color: var(--text);
+  vertical-align: bottom;
+}
+
+nav a:hover {
+  color: var(--accent3);
+}
+
+/* nav button CSS */
+#menu {
+  font-size: larger;
+}
+
+#menu {
+  justify-self: end;
+  background-color: var(--accent1);
+  appearance: none;
+  border: none;
+}
+
+#menu::before {
+  color: var(--text);
+  content: "\2630";
+}
+#menu:hover {
+  color: var(--accent3);
+}
+
+/* footer */
+
+
+footer {
+  background-color: var(--accent1);
+  color: var(--text);
+  
+  padding: 25px 50px;
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
