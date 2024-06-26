@@ -5,8 +5,8 @@
   --font2: Gugi;
 
   /* vars to hold colours */
-  --text: #ffffff;
-  --background: #121212;
+  --text: #fff;
+  --background: #000;
   --accent1: #f55a00;
   --accent2: #51b867;
   --accent3: #427651;
@@ -19,6 +19,8 @@ body {
   font-size: 22px;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 body a {
@@ -29,6 +31,7 @@ body a {
 
 header .logo {
   width: 80px;
+  padding: 10px;
 }
 
 #logo_link {
@@ -46,9 +49,7 @@ header {
 
   /* text  */
   text-decoration: none;
-  color: var(--text);
 }
-
 
 header nav {
   display: flex;
@@ -60,15 +61,10 @@ header nav {
   padding: 20px;
 }
 
-nav.hide {
-    display: none;
-
-}
-  
 nav a {
   text-decoration: none;
   padding-left: 20px;
-  color: var(--text);
+  color: var(--background);
   vertical-align: bottom;
 }
 
@@ -89,7 +85,7 @@ nav a:hover {
 }
 
 #menu::before {
-  color: var(--text);
+  color: var(--background);
   content: "\2630";
 }
 #menu:hover {
@@ -98,14 +94,202 @@ nav a:hover {
 
 /* footer */
 
-
 footer {
   background-color: var(--accent1);
-  color: var(--text);
-  
+  color: var(--background);
+
   padding: 25px 50px;
   margin-top: 200px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+/* hero img */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#hero-img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 800px;
+}
+
+#hero-msg {
+  text-align: center;
+  font-family: var(--font1);
+  color: var(--accent2);
+}
+
+#hero-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* APOD BOX */
+
+.change-apod-box {
+  background-color: var(--accent3);
+  color: var(--text);
+
+  max-width: 800px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.change-apod-box input,
+.change-apod-box #change-apod {
+  width: 30%;
+  max-width: 1000px;
+  height: 35px;
+  max-width: 300px;
+}
+
+#change-apod-box input {
+  border: none;
+}
+
+#change-apod {
+  border: none;
+  background-color: var(--accent1);
+  color: var(--text);
+  min-width: 40px;
+  min-height: 40px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#apod-title {
+  font-family: var(--font2);
+}
+.home-tittle {
+  font-family: var(--font2);
+}
+
+#expand-desc {
+  border: none;
+  background-color: var(--accent1);
+  color: var(--text);
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* cards */
+
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--accent1);
+  color: var(--text);
+
+  margin: 10px;
+  padding: 15px;
+}
+
+.inner-card {
+  width: 100%;
+  background: var(--accent3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* css for msg */
+
+#msg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg {
+  background-color: var(--accent1);
+  color: var(--background);
+  line-height: 1.5em;
+  padding: 35px;
+  max-width: 800px;
+  max-height: 500px;
+}
+
+.msg h2 {
+  font-family: var(--font1);
+}
+
+.msg p {
+  font-family: var(--font2);
+  font-size: 0.8em;
+  padding-bottom: 15px;
+}
+
+/* css for hiding elements in mobil */
+.hide {
+  display: none;
+}
+
+@media screen and (min-width: 1250px) {
+  /* hide unneeded elements */
+  #menu {
+    display: none;
+  }
+
+  /* large screen cards */
+  .home-grid {
+    flex-direction: row;
+  }
+
+  .change-apod-box input,
+.change-apod-box #change-apod {
+  width: 100px;
+  /* max-width: 1000px; */
+  height: 30px;
+  /* max-width: 300px; */
+}
+
+  #msg-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 50px 1fr 50px;
+  }
+  
+  .msg {
+    grid-column: 8 / 12;
+    grid-row: 2;
+
+    max-width: 500px;
+    max-height: 300px;
+    
+  }
+
+  .blackhole {
+    
+    grid-column: 1 / 9;
+    grid-row: 2;
+
+    width: 120%;
+    height: auto;
+
+    min-width: 500px;
+    min-height: auto;
+  }
 }

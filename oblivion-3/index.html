@@ -9,43 +9,51 @@
   </head>
 
   <body>
-    <div id="content">
-      <header>
-        <a id="logo_link" href="index.html">
-          <img
-            class="logo"
-            src="./images/Oblivion_logo.png"
-            alt="oblivion Logo"
-          />
-        </a>
-        <button id="menu"></button>
-        <nav>
-          <a href="index.html">Home</a>
-          <a href="contact-me.html">Contact Us</a>
-        </nav>
-      </header>
+    <header>
+      <a id="logo_link" href="index.html">
+        <img
+          class="logo"
+          src="./images/Oblivion_logo.png"
+          alt="oblivion Logo"
+        />
+      </a>
+      <button id="menu"></button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="contact-me.html">Contact Us</a>
+      </nav>
+    </header>
 
-      <div id="hero">
-        <div id="hero-box">
-          <img
-            id="hero-img"
-            src="./images/Pacific_ocean_from_space_by_blueforce4116.jpg"
-            width="700"
-            height="500"
-            alt="People enjoying white water rafting"
-          />
-        </div>
-        <section id="hero-msg">
-          <h1 class="home-tittle">welcome to Oblivion</h1>
-          <h4>The Place to Learn About Space</h4>
-          <div class="button-box">
-            <a class="book" href="rates.html">Book Now</a>
-          </div>
-        </section>
+    <div id="hero">
+      <div id="hero-box">
+        <img
+          id="hero-img"
+          src="./images/Pacific_ocean_from_space_by_blueforce4116.jpg"
+          width="700"
+          height="500"
+          alt="todays's Astronomical picture from nasa"
+        />
       </div>
 
-      <!-- <main class="home-grid">
-        <section class="planet-card">
+      <section id="hero-msg">
+        <h1 class="home-tittle">welcome to Oblivion</h1>
+        <h4>The Place to Learn About Space</h4>
+
+        <div class="change-apod-box">
+          <label for="date">Enter APOD Date: YYYY-MM-DD</label>
+          <input type="text" id="date" name="date" />
+          <button id="change-apod">Change</button>
+
+          <p id="apod-title">title:</p>
+          <button id="expand-desc">Description</button>
+          <p id="apod-description">description:</p>
+        </div>
+      </section>
+    </div>
+
+    <main>
+      <div class="home-grid">
+        <section class="card">
           <img
             class="card-img"
             src="images/carbon_world.jpg"
@@ -53,10 +61,13 @@
             height="450"
             alt="Planet in space"
           />
-          <img class="icon" src="./images/Planet_icon.png" alt="planet icon" />
-          <h2>Planets</h2>
+          <div class="inner-card">
+            <img class="icon" src="./images/Planet_icon.png" alt="planet icon" />
+            <h2>Planets</h2>
+          </div>
         </section>
-        <section class="rocket-card">
+
+        <section class="card">
           <img
             class="card-img"
             src="images/columbia_fireing_engines.jpg"
@@ -64,10 +75,13 @@
             height="450"
             alt="SpaceShuttle columbia firing booster engines"
           />
-          <img class="icon" src="./images/rocket_icon.png" alt="Rocket icon" />
-          <h2>Rockets</h2>
+          <div class="inner-card">
+            <img class="icon" src="./images/rocket_icon.png" alt="Rocket icon" />
+            <h2>Rockets</h2>
+          </div>
         </section>
-        <section class="star-card">
+
+        <section class="card">
           <img
             class="card-img"
             src="images/1-AG-Carinae.jpg"
@@ -75,10 +89,14 @@
             height="450"
             alt="star surrounded by gasclouds"
           />
-          <img class="icon" src="./images/star_icon.png" alt="star icon" />
-          <h2>Stars</h2>
+          <div class="inner-card">
+            <img class="icon" src="./images/star_icon.png" alt="star icon" />
+            <h2>Stars</h2>
+          </div>
         </section>
-        <div id="background"></div>
+      </div>
+
+      <div id="msg-container">
         <img
           class="blackhole"
           src="images/blackhole.jpg"
@@ -94,18 +112,17 @@
             and space stations. Including the most dangerous celestial body the
             Black Hole.
           </p>
-          <a class="submit" href="submit.html">Submit Fact</a>
         </section>
-      </main> -->
+      </div>
+    </main>
 
-      <footer>
-        <p id="copyright">Oblivion &copy; 2022 - Hyrum Bullock</p>
-    
-      </footer>
-    </div>
+    <footer>
+      <p id="copyright">Oblivion &copy; 2022 - Hyrum Bullock</p>
+    </footer>
 
-    <script src="./js/headerMenu.js"></script>
-    <script src="./js/dateHandler.js"></script>
-
+    <script src="./js/hideButtonHandler.js"></script>
+    <script src="./js/imageHandler.js" type="module"></script>
+    <script src="./js/externalServices.js" type="module"></script>
+    <script src="./js/dateHandler.js" type="module"></script>
   </body>
 </html>
