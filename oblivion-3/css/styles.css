@@ -25,6 +25,7 @@ body {
 
 body a {
   text-decoration: none;
+  color: var(--text);
 }
 
 /* header */
@@ -111,11 +112,19 @@ footer {
   flex-direction: column;
   align-items: center;
 }
+
 #hero-img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 800px;
+  overflow: hidden;
+}
+
+.portrait-container {
+  max-height :400px;
+  max-width: 400px;
+  overflow: hidden;
 }
 
 #hero-msg {
@@ -131,14 +140,30 @@ footer {
   align-items: center;
 }
 
+#hero-msg h1 {
+  margin: 10px;
+  margin-top: 50px;
+}
+
+#hero-msg p {
+  margin: 10;
+
+  margin-bottom: 40px;
+}
+
 /* APOD BOX */
 
 .change-apod-box {
   background-color: var(--accent3);
   color: var(--text);
+  font-family: var(--font2);
 
   max-width: 800px;
   padding: 20px;
+
+  border-color: var(--accent1);
+  border-style: solid;
+  border-width: 15px;
 
   display: flex;
   flex-direction: column;
@@ -162,15 +187,13 @@ footer {
   border: none;
   background-color: var(--accent1);
   color: var(--text);
+
   min-width: 40px;
   min-height: 40px;
   padding: 10px;
   font-size: 20px;
 }
 
-#apod-title {
-  font-family: var(--font2);
-}
 .home-tittle {
   font-family: var(--font2);
 }
@@ -203,6 +226,13 @@ footer {
 
   margin: 10px;
   padding: 15px;
+}
+
+.card-img {
+  width: 300px;
+  height: 300px;
+  /* max-width: 400px;
+  max-height: 400px; */
 }
 
 .inner-card {
@@ -242,10 +272,43 @@ footer {
   padding-bottom: 15px;
 }
 
+img.blackhole {
+  max-width: 100%;
+  height: auto;
+
+}
+
 /* css for hiding elements in mobil */
 .hide {
   display: none;
 }
+button {
+  border-radius: 5px;
+}
+input {
+  border-radius: 5px;
+}
+
+/* ajax spinner */
+.spinner {
+  display: none; /* Hide initially */
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--accent1);
+  border-radius: 50%;
+  border-top-color: var(--accent2); /* Animation color */
+  animation: spin 1s linear infinite;
+
+  margin: 500px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* large screen */
+
 
 @media screen and (min-width: 1250px) {
   /* hide unneeded elements */
@@ -253,36 +316,49 @@ footer {
     display: none;
   }
 
+  /* hero img */
+  #hero-img {
+    max-height: 1000px;
+  }
+
+  .portrait-container {
+    max-height : 2000px;
+    max-width: 2000px;
+    overflow: visible;
+  }
+
   /* large screen cards */
   .home-grid {
     flex-direction: row;
+    justify-content: space-around;
   }
 
   .change-apod-box input,
-.change-apod-box #change-apod {
-  width: 100px;
-  /* max-width: 1000px; */
-  height: 30px;
-  /* max-width: 300px; */
-}
+  .change-apod-box #change-apod {
+    width: 100px;
+    /* max-width: 1000px; */
+    height: 30px;
+    /* max-width: 300px; */
+  }
 
+  /* large msg CSS */
   #msg-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 50px 1fr 50px;
   }
-  
+
   .msg {
     grid-column: 8 / 12;
     grid-row: 2;
 
     max-width: 500px;
     max-height: 300px;
-    
   }
 
+  /* large blackhole */
+
   .blackhole {
-    
     grid-column: 1 / 9;
     grid-row: 2;
 

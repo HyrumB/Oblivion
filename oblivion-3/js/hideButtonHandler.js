@@ -1,28 +1,38 @@
-const menu = document.querySelector("#menu");
-const nav = document.querySelector("nav");
+const menu = document.querySelector("#menu"); // button
+const nav = document.querySelector("nav"); // thing to hide
 
 menu.addEventListener("click", () => {
   nav.classList.toggle("hide");
 });
 
-const expandDesc = document.querySelector("#expand-desc");
-const apodDescription = document.querySelector("#apod-description");
+const expandDesc = document.querySelector("#expand-desc"); // button
+const apodDescription = document.querySelector("#apod-description"); // thing to hide
 
-expandDesc.addEventListener("click", () => {
-  apodDescription.classList.toggle("hide");
-});
+if (apodDescription !== null) {
+  expandDesc.addEventListener("click", () => {
+    apodDescription.classList.toggle("hide");
+  });
+}
 
 function checkScreenSize() {
   const windowWidth = window.innerWidth;
-  const threshold = 768;
+  const threshold = 1250;
 
   if (windowWidth <= threshold) {
-    menu.classList.add("hide"); // Add the class 'small-screen'
-    apodDescription.classList.add("hide");
-    console.log("Small screen");
+    menu.classList.remove("hide"); //show button
+    nav.classList.add("hide");
+    if (apodDescription !== null) {
+      apodDescription.classList.add("hide");
+    }
   } else {
-    console.log("Large screen");
+    menu.classList.remove("hide");
+    nav.classList.remove("hide");
+    if (apodDescription !== null) {
+      apodDescription.classList.add("hide");
+    }
   }
 }
 
 checkScreenSize();
+
+window.addEventListener("resize", checkScreenSize);
