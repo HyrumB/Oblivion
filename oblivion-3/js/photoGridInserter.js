@@ -1,54 +1,49 @@
-
 import { getLibraryMedia, getUrl } from "./externalServices.js";
+import { createNASALibraryQuery } from "./SearchHandler.js";
 
+const submit = document.querySelector("#search-button");
 
+submit.addEventListener("click", GetNewImages);
 
-const params = {
-    q: "apollo 11",
-    description: "moon landing",
-    media_type: "image",
-  };
-  
-
-export async function photoGridInserter() {
-    const data = await getLibraryMedia("search", params);
-    // console.log(data);
-    createImageCards(data);
+function GetNewImages() {
+  let params = createNASALibraryQuery();
+  console.log(params);
+  photoGridInserter(params);
 }
 
-function createImageCards(data) {
-    const parentContainer = document.querySelector("#photo-grid");
-    const container = document.createElement("div");
-    container.classList.add("image-card-container");
-    
-    const items = data.collection.items
+export async function photoGridInserter(params) {
+  const data = await getLibraryMedia("search", params);
+  createImageCards(data);
+  console.log(data);
+}
 
-    //item is the index not the data
-    for (const item of items) {
-    //   console.log(item);
-      const card = document.createElement("div");
-      card.classList.add("image-card");
-  
-      const img = document.createElement("img");
-      getUrl(item.href).then((data) => {
-        img.src = data[2];
-      });
-    //   console.log(item.href);  
+function createImageCards(data, imgCount = 500) {
+  const parentContainer = document.querySelector("#photo-grid");
 
-      const name = document.createElement("p");
-      name.textContent = item.data[0].title;
-    //   console.log(item.data[0].title);
+  parentContainer.innerHTML = "";
 
-      card.appendChild(img);
-      card.appendChild(name);
-  
-      container.appendChild(card);
-      parentContainer.appendChild(container);
-    };
-}  
+  const items = data.collection.items.slice(0, imgCount);
 
+  for (const item of items) {
+    const card = document.createElement("div");
+    card.classList.add("lib-cards");
 
-photoGridInserter()
+    const img = document.createElement("img");
+    img.classList.add("lib-img");
+    getUrl(item.href).then((data) => {
+      img.src = data[3];
+    });
+
+    const name = document.createElement("p");
+    name.classList.add("lib-title");
+    name.textContent = item.data[0].title;
+
+    card.appendChild(img);
+    card.appendChild(name);
+
+    parentContainer.appendChild(card);
+  }
+}
 
 // my codes output
 // https://images-api.nasa.gov/search?q=apollo+11&description=moon+landing&media_type=image

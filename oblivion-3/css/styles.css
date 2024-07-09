@@ -122,7 +122,7 @@ footer {
 }
 
 .portrait-container {
-  max-height :400px;
+  max-height: 400px;
   max-width: 400px;
   overflow: hidden;
 }
@@ -215,7 +215,7 @@ footer {
   justify-content: center;
 }
 
-.card {
+.cards {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,7 +275,122 @@ footer {
 img.blackhole {
   max-width: 100%;
   height: auto;
+}
 
+/********* css for library page *********/
+
+/**** css for search section *****/
+
+/*  trying out nested css */
+
+#search-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font: var(--font2);
+  color: var(--text);
+  padding: 30px;
+  align-items: center;
+
+  #q {
+    width: 100%;
+    height: 35%;
+    border-radius: 15px;
+    border-color: var(--accent1);
+    background-color: var(--background);
+    font-size: medium;
+    color: var(--text);
+  }
+
+  #search-button {
+    width: 30%;
+    height: 35%;
+    border-radius: 15px;
+    border-color: var(--accent1);
+    background-color: var(--accent1);
+    font-size: medium;
+    color: var(--background);
+  }
+
+  div {
+    width: 50%;
+
+    label {
+      font-size: medium;
+    }
+
+    select {
+      width: 45%;
+      height: 10%;
+
+      border-radius: 15px;
+      background-color: var(--accent1);
+      font-size: medium;
+      color: var(--background);
+    }
+  }
+}
+
+/**** css for library grid ****/
+#photo-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  object-fit: contain;
+  min-height: 100vh;
+}
+
+.lib-cards {
+  background-color: var(--accent2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--text);
+
+  margin: 10px;
+  padding: 15px;
+
+  max-width: 150px;
+  max-height: 120px;
+}
+
+.lib-title {
+ 
+  opacity: 0; 
+  z-index: 1;
+
+  display: flex;
+  overflow: hidden;
+
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: var(--font2);
+  font-size: 0.5em;
+  width: 115%;
+  height: 35px;
+  padding: 5px;
+
+}
+
+.lib-img {
+  position: relative;
+  top: 15%;
+
+  width: auto;
+  height: 85%;
+}
+
+.lib-cards:hover {
+  background-color: var(--accent3);
+
+  .lib-title {
+    opacity: 1;
+    background-color: var(--accent3);
+    flex-shrink: 0;
+  }
 }
 
 /* css for hiding elements in mobil */
@@ -303,12 +418,15 @@ input {
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* large screen */
-
 
 @media screen and (min-width: 1250px) {
   /* hide unneeded elements */
@@ -322,7 +440,7 @@ input {
   }
 
   .portrait-container {
-    max-height : 2000px;
+    max-height: 2000px;
     max-width: 2000px;
     overflow: visible;
   }
@@ -365,7 +483,44 @@ input {
     width: 120%;
     height: auto;
 
-    min-width: 500px;
+    min-width: 100%;
     min-height: auto;
+  }
+
+  /* NASA library large */
+
+  #search-section {
+    #q {
+      width: 100%;
+      height: 30px;
+      font-size: 1.5em;
+    }
+
+    div {
+      select {
+        width: 20%;
+      }
+    }
+  }
+
+  .lib-cards {
+    width: 20%;
+    height: auto;
+    max-width: 1000px;
+    max-height: 1000px;
+  }
+
+  .lib-img {
+    position: relative;
+    top: 5%;
+    width: 75%;
+    height: auto;
+  }
+
+  .lib-title {
+
+    font-size: 0.8em;
+    width: 100%;
+    height: 35px;
   }
 }

@@ -3,7 +3,7 @@ const footer = document.querySelector("footer");
 
 
 const htmlString = `
-    <a id="logo_link" href="index.html">
+    <a id="logo_link" href="../index.html">
       <img
         class="logo"
         src="../images/Oblivion_logo.png"
@@ -12,7 +12,7 @@ const htmlString = `
     </a>
     <button id="menu"></button>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="../index.html">Home</a>
       <a href="contact-me.html">Contact Us</a>
     </nav>
   `;
