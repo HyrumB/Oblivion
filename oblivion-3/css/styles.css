@@ -358,8 +358,7 @@ img.blackhole {
 }
 
 .lib-title {
- 
-  opacity: 0; 
+  opacity: 0;
   z-index: 1;
 
   display: flex;
@@ -372,7 +371,6 @@ img.blackhole {
   width: 115%;
   height: 35px;
   padding: 5px;
-
 }
 
 .lib-img {
@@ -392,6 +390,67 @@ img.blackhole {
     flex-shrink: 0;
   }
 }
+
+/**** css for patent lookup ****/
+
+#patent-list {
+  min-height: 100vh;
+
+  .patent-title {
+    font-family: var(--font1);
+    color: var(--background);
+    padding: 5px;
+    border: 0px;
+    margin: 0px;
+  }
+  
+  li{
+    padding: 5px;
+    background-color: #f55a00;
+    margin: 5px;
+    border: 0;
+  }
+}
+
+/**** css for patent info ****/
+
+#patent-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 15px;
+  color: var(--text);
+
+
+  h1{ 
+    font-family: var(--font2);
+    padding: 5px;
+    border: 0px;
+    margin: 0px;
+  }
+
+  img{
+    margin: 10px;
+
+    max-width: 70%;
+    height: auto;
+  }
+
+  #patent-article{
+    font-family: var(--font1);
+    background-color:var(--accent1);
+    color: var(--background);
+
+    font-size: 0.8em;
+
+    padding: 5px;
+    border: 0px;
+    margin: 0px;
+  }
+}
+
 
 /* css for hiding elements in mobil */
 .hide {
@@ -424,6 +483,18 @@ input {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media screen and (min-width: 800px) {
+  #patent-info {
+    #patent-article{
+      font-size: 1em;
+
+      margin: 10px;
+      padding: 15px;
+    }
+  }  
 }
 
 /* large screen */
@@ -518,9 +589,18 @@ input {
   }
 
   .lib-title {
-
     font-size: 0.8em;
     width: 100%;
     height: 35px;
   }
+
+  /* patent info */
+
+  #patent-info {
+
+    #patent-article{
+      font-size: 1.1em;
+    }
+  }
+
 }

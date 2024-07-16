@@ -1,5 +1,5 @@
 import { getLibraryMedia, getUrl } from "./externalServices.js";
-import { createNASALibraryQuery } from "./SearchHandler.js";
+import { createNASALibraryQuery } from "./queryFormats.js";
 
 const submit = document.querySelector("#search-button");
 
@@ -24,9 +24,14 @@ function createImageCards(data, imgCount = 500) {
 
   const items = data.collection.items.slice(0, imgCount);
 
+  let count = 0;
   for (const item of items) {
+    // console.log(item);
     const card = document.createElement("div");
     card.classList.add("lib-cards");
+    card.id = count
+
+    count ++
 
     const img = document.createElement("img");
     img.classList.add("lib-img");
