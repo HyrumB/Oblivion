@@ -3,7 +3,7 @@ import { getToday } from "./dateHandler.js";
 import { NASA_API_KEY } from "./env.js";
 import { hideSpinner, showSpinner } from "./ajaxSpinner.js";
 
-if ((NASA_API_KEY == null)) {
+if (NASA_API_KEY == null) {
   alert("NASA API KEY NOT FOUND");
 }
 
@@ -14,6 +14,7 @@ const title = document.querySelector("#apod-title");
 const description = document.querySelector("#apod-description");
 const newDate = document.querySelector("#date");
 const changeAPODBtn = document.querySelector("#change-apod");
+
 const screenWidth = window.innerWidth;
 const screenHeight = window.innerHeight;
 

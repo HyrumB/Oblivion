@@ -8,12 +8,14 @@ menu.addEventListener("click", () => {
 const expandDesc = document.querySelector("#expand-desc"); // button
 const apodDescription = document.querySelector("#apod-description"); // thing to hide
 
+// if the page isnt the homepage dont run this code
 if (apodDescription !== null) {
+  // event listener for expanding the home's description
   expandDesc.addEventListener("click", () => {
     apodDescription.classList.toggle("hide");
   });
 }
-
+// checks the size of the screen and hides the button if it is too big
 function checkScreenSize() {
   const windowWidth = window.innerWidth;
   const threshold = 1250;

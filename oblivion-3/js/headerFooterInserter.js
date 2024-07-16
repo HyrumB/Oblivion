@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
-
+// Header dom inserter
 const htmlString = `
     <a id="logo_link" href="../index.html">
       <img
@@ -17,6 +17,7 @@ const htmlString = `
     </nav>
   `;
 
+  // Footer dom inserter
   const htmlString2 = `
   <p id="copyright">Oblivion &copy; 2022 - Hyrum Bullock</p>`;
 

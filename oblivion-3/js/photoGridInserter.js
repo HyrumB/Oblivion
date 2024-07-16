@@ -1,22 +1,33 @@
 import { getLibraryMedia, getUrl } from "./externalServices.js";
 import { createNASALibraryQuery } from "./queryFormats.js";
 
-const submit = document.querySelector("#search-button");
+const submit = document.querySelector(".search-button");
 
-submit.addEventListener("click", GetNewImages);
+submit.addEventListener("click", getMedia);
 
-function GetNewImages() {
+// sends input on enter key press
+document.querySelector(".q").addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    getMedia();
+  }
+});
+
+// creates query and sends it to photoGridInserter
+function getMedia() {
   let params = createNASALibraryQuery();
   console.log(params);
   photoGridInserter(params);
 }
 
+// gets the images from nasa api
 export async function photoGridInserter(params) {
   const data = await getLibraryMedia("search", params);
   createImageCards(data);
-  console.log(data);
+  // console.log(data);
 }
 
+// creates the image cards and fills them out
 function createImageCards(data, imgCount = 500) {
   const parentContainer = document.querySelector("#photo-grid");
 
@@ -29,9 +40,9 @@ function createImageCards(data, imgCount = 500) {
     // console.log(item);
     const card = document.createElement("div");
     card.classList.add("lib-cards");
-    card.id = count
+    card.id = count;
 
-    count ++
+    count++;
 
     const img = document.createElement("img");
     img.classList.add("lib-img");
