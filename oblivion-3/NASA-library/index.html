@@ -10,10 +10,11 @@
   <body>
     <header></header>
     <main>
-      <section id="search-section">
+      <section class="search-section">
         <div> 
           <form>
-            <input type="text" placeholder="search..." id="q" name="q" />
+            <h2>Search NASA Library</h2>
+            <input type="text" placeholder="search..." class="q" name="q" />
 
             <label for="media-type">media type:</label>
             <select name="media-type" id="media-type">
@@ -22,7 +23,7 @@
               <option value="audio">audio</option>
             </select>
 
-            <input type="button" value="Search" id="search-button" />
+            <input type="button" value="Search" class="search-button" />
           
           </form>
         </div>
@@ -31,7 +32,7 @@
     </main>
     <footer></footer>
 
-    <script src="../js/SearchHandler.js" type="module"></script>
+    <script src="../js/queryFormats.js" type="module"></script>
     <script src="../js/photoGridInserter.js" type="module"></script>
     <script src="../js/headerFooterInserter.js"></script>
     <script src="../js/dateHandler.js" type="module"></script>

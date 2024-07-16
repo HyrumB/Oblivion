@@ -283,7 +283,7 @@ img.blackhole {
 
 /*  trying out nested css */
 
-#search-section {
+.search-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -292,28 +292,35 @@ img.blackhole {
   padding: 30px;
   align-items: center;
 
-  #q {
-    width: 100%;
-    height: 35%;
-    border-radius: 15px;
-    border-color: var(--accent1);
-    background-color: var(--background);
-    font-size: medium;
-    color: var(--text);
-  }
-
-  #search-button {
-    width: 30%;
-    height: 35%;
-    border-radius: 15px;
-    border-color: var(--accent1);
-    background-color: var(--accent1);
-    font-size: medium;
-    color: var(--background);
-  }
-
   div {
     width: 50%;
+
+    h2 {
+      font-family: var(--font2);
+      padding: 5px;
+      margin: 0px;
+      font-size: 0.8em;
+    }
+
+    .q {
+      width: 100%;
+      height: 35%;
+      border-radius: 15px;
+      border-color: var(--accent1);
+      background-color: var(--background);
+      font-size: medium;
+      color: var(--text);
+    }
+
+    .search-button {
+      width: 40%;
+      height: 35%;
+      border-radius: 15px;
+      border-color: var(--accent1);
+      background-color: var(--accent1);
+      font-size: medium;
+      color: var(--background);
+    }
 
     label {
       font-size: medium;
@@ -403,12 +410,21 @@ img.blackhole {
     border: 0px;
     margin: 0px;
   }
-  
-  li{
+
+  li {
     padding: 5px;
-    background-color: #f55a00;
+    background-color: var(--accent1);
     margin: 5px;
     border: 0;
+    
+  }
+
+  li:hover {
+    background-color: var(--accent3);
+    color: var(--text);
+    a {
+      color: var(--text);
+    }
   }
 }
 
@@ -423,24 +439,23 @@ img.blackhole {
   padding: 15px;
   color: var(--text);
 
-
-  h1{ 
+  h1 {
     font-family: var(--font2);
     padding: 5px;
     border: 0px;
     margin: 0px;
   }
 
-  img{
+  img {
     margin: 10px;
 
     max-width: 70%;
-    height: auto;
+    height: auto;    
   }
 
-  #patent-article{
+  #patent-article {
     font-family: var(--font1);
-    background-color:var(--accent1);
+    background-color: var(--accent1);
     color: var(--background);
 
     font-size: 0.8em;
@@ -450,7 +465,6 @@ img.blackhole {
     margin: 0px;
   }
 }
-
 
 /* css for hiding elements in mobil */
 .hide {
@@ -485,19 +499,39 @@ input {
   }
 }
 
-
+/**************** medium screen ****************/
 @media screen and (min-width: 800px) {
-  #patent-info {
-    #patent-article{
-      font-size: 1em;
+  .search-section {
+    font-size: 1.5em;
 
-      margin: 10px;
-      padding: 15px;
+
+    div {
+      .q {
+        width: 100%;
+        height: 25px;
+        font-size: 0.8em;
+      }
+      .search-button {
+        width: 25%;
+      }
+      select {
+        width: 20%;
+        height: 25px;
+      }
     }
-  }  
+  }
 }
 
-/* large screen */
+#patent-info {
+  #patent-article {
+    font-size: 1em;
+
+    margin: 10px;
+    padding: 15px;
+  }
+}
+
+/**************** large screen ****************/
 
 @media screen and (min-width: 1250px) {
   /* hide unneeded elements */
@@ -558,21 +592,24 @@ input {
     min-height: auto;
   }
 
-  /* NASA library large */
-
-  #search-section {
-    #q {
-      width: 100%;
-      height: 30px;
-      font-size: 1.5em;
-    }
-
+  /* search-section */
+  .search-section {
     div {
+      .q {
+        width: 100%;
+        height: 30px;
+        font-size: 1.5em;
+      }
+      .search-button {
+        width: 25%;
+      }
       select {
         width: 20%;
+        height: 25px;
       }
     }
   }
+  /* NASA library large */
 
   .lib-cards {
     width: 20%;
@@ -597,10 +634,8 @@ input {
   /* patent info */
 
   #patent-info {
-
-    #patent-article{
+    #patent-article {
       font-size: 1.1em;
     }
   }
-
 }
