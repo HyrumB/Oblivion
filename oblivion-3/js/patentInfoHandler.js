@@ -8,7 +8,6 @@ if (NASA_API_KEY == null) {
 }
 
 const patentID = urlParams.get("patentID");
-const query = urlParams.get("qury");
 
 // injecting the patent info into the DOM
 async function injectPatentInfo() {
