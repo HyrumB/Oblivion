@@ -17,11 +17,9 @@ const htmlString = `
     </nav>
   `;
 
-  // Footer dom inserter
-  const htmlString2 = `
+// Footer dom inserter
+const htmlString2 = `
   <p id="copyright">Oblivion &copy; 2022 - Hyrum Bullock</p>`;
 
-
-
-  header.innerHTML = htmlString;
-  footer.innerHTML = htmlString2;
+header.innerHTML = htmlString;
+footer.innerHTML = htmlString2;

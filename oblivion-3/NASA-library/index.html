@@ -11,7 +11,7 @@
     <header></header>
     <main>
       <section class="search-section">
-        <div> 
+        <div>
           <form>
             <h2>Search NASA Library</h2>
             <input type="text" placeholder="search..." class="q" name="q" />
@@ -24,11 +24,12 @@
             </select>
 
             <input type="button" value="Search" class="search-button" />
-          
           </form>
         </div>
       </section>
-      <section id="photo-grid"></section>
+      <section id="photo-grid">
+        <div class="spinner"></div>
+      </section>
     </main>
     <footer></footer>
 
@@ -37,5 +38,7 @@
     <script src="../js/headerFooterInserter.js"></script>
     <script src="../js/dateHandler.js" type="module"></script>
     <script src="../js/hideButtonHandler.js" type="module"></script>
+    <script src="../js/ajaxSpinner.js" type="module"></script>
   </body>
 </html>
+console.log(data);

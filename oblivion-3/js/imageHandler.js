@@ -9,7 +9,7 @@ if (NASA_API_KEY == null) {
 
 // html elements
 const heroImage = document.querySelector("#hero-img");
-const heroContainer = document.querySelector("#hero-box");
+const heroBox = document.querySelector("#hero-box");
 const title = document.querySelector("#apod-title");
 const description = document.querySelector("#apod-description");
 const newDate = document.querySelector("#date");
@@ -40,7 +40,7 @@ function changeAPOD(key, today) {
       if (this.width < this.height) {
         console.log("portrait");
         heroImage.style.transform = "rotate(90deg)";
-        heroContainer.classList.toggle("portrait-container");
+        heroBox.classList.toggle("portrait-container");
       }
     };
 
@@ -51,9 +51,18 @@ function changeAPOD(key, today) {
       heroImage.alt = "todays's Astronomical picture from nasa";
       title.innerHTML = `Title: ${data.title}`;
       description.innerHTML = data.explanation;
+
     } else if (data.media_type === "video") {
-      alert('sorry, the "image" for this date is a Video');
-      console.log("video");
+      const video = document.createElement("iframe");
+
+      video.src = data.url;
+      video.autoplay = true;
+      video.loop = true;
+      video.muted = true;
+
+      heroBox.appendChild(video);
+      heroImage.style.display = "none";
+
       title.innerHTML = `Title: ${data.title}`;
       description.innerHTML = data.explanation;
     }

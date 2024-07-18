@@ -1,5 +1,11 @@
-import { getLibraryMedia, getUrl } from "./externalServices.js";
+import {
+  getFromLocalStorage,
+  getLibraryMedia,
+  getUrl,
+  saveToLocalStorage,
+} from "./externalServices.js";
 import { createNASALibraryQuery } from "./queryFormats.js";
+import { hideSpinner, showSpinner } from "./ajaxSpinner.js";
 
 const submit = document.querySelector(".search-button");
 
@@ -14,55 +20,53 @@ document.querySelector(".q").addEventListener("keypress", (event) => {
 });
 
 // creates query and sends it to photoGridInserter
-function getMedia() {
-  let params = createNASALibraryQuery();
-  console.log(params);
-  photoGridInserter(params);
-}
-
-// gets the images from nasa api
-export async function photoGridInserter(params) {
+async function getMedia() {
+  const params = createNASALibraryQuery();
   const data = await getLibraryMedia("search", params);
+  saveToLocalStorage("NASA_MEDIA", data);
+
+  showSpinner();
   createImageCards(data);
-  // console.log(data);
+  hideSpinner();
 }
 
 // creates the image cards and fills them out
 function createImageCards(data, imgCount = 500) {
   const parentContainer = document.querySelector("#photo-grid");
-
   parentContainer.innerHTML = "";
 
   const items = data.collection.items.slice(0, imgCount);
 
-  let count = 0;
   for (const item of items) {
-    // console.log(item);
     const card = document.createElement("div");
-    card.classList.add("lib-cards");
-    card.id = count;
-
-    count++;
-
     const img = document.createElement("img");
+    const name = document.createElement("p");
+
+    card.classList.add("lib-cards");
     img.classList.add("lib-img");
+    img.loading = "lazy";
     getUrl(item.href).then((data) => {
       img.src = data[3];
     });
-
-    const name = document.createElement("p");
     name.classList.add("lib-title");
     name.textContent = item.data[0].title;
 
     card.appendChild(img);
     card.appendChild(name);
-
     parentContainer.appendChild(card);
   }
 }
 
-// my codes output
-// https://images-api.nasa.gov/search?q=apollo+11&description=moon+landing&media_type=image
+function loadStorage() {
+  if (localStorage.getItem("NASA_MEDIA") !== null) {
+    try {
+      // Attempt to parse the JSON data
+      const localData = getFromLocalStorage("NASA_MEDIA");
+      createImageCards(localData);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
 
-// working search from nasa docs
-// https://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image
+loadStorage();

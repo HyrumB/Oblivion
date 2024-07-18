@@ -1,9 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
-import { getPatent } from "./externalServices.js";
+import { getFromLocalStorage } from "./externalServices.js";
 import { NASA_API_KEY } from "./env.js";
 import { hideSpinner, showSpinner } from "./ajaxSpinner.js";
 
-if ((NASA_API_KEY == null)) {
+if (NASA_API_KEY == null) {
   alert("NASA API KEY NOT FOUND");
 }
 
@@ -13,8 +13,9 @@ const query = urlParams.get("qury");
 // injecting the patent info into the DOM
 async function injectPatentInfo() {
   showSpinner();
-  const patents = await getPatent(NASA_API_KEY, query);
+  const patents = getFromLocalStorage("NASA_PATENTS")
   hideSpinner();
+  console.log(patents)
 
   const item = patents.results.find((item) => item[0] === patentID);
 
