@@ -36,13 +36,13 @@ function changeAPOD(key, today) {
     // detects if image is portrait and if it is
     // it then rotates the image
     const img = new Image();
-    img.onload = function () {
-      if (this.width < this.height) {
-        console.log("portrait");
-        heroImage.style.transform = "rotate(90deg)";
-        heroBox.classList.toggle("portrait-container");
-      }
-    };
+    // img.onload = function () {
+    //   if (this.width < this.height) {
+    //     console.log("portrait");
+    //     heroImage.style.transform = "rotate(90deg)";
+    //     heroBox.classList.toggle("portrait-container");
+    //   }
+    // };
 
     //detects if image or video and responds correctly
     if (data.media_type === "image") {
